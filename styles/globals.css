@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #ED6451;
+    --color-primary-bold: #FB2606;
+    --color-primary-light: #FF9A1F;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+/* Overrides default "material" style of react-phone-input-2 */
+.react-tel-input {
+  @apply relative border-0 rounded-md px-3 py-2 shadow-sm ring-1 ring-inset ring-slate-300 focus-within:ring-2 focus:ring-inset focus-within:ring-slate-800 font-sans !important
+}
+
+.react-tel-input .form-control {
+  @apply block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm pl-16 !important
+}
+
+.react-tel-input .special-label {
+  @apply absolute -top-2.5 left-2 -mt-px inline-block px-1 bg-white text-sm text-gray-600 ml-2 !important
+}
+
+.react-tel-input .country-list .country {
+  @apply py-2 !important
+}
